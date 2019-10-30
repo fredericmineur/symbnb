@@ -1,0 +1,19 @@
+
+/*let some space around ALL containers*/
+div.container {
+    margin-top: 20px;
+}
+/*padding to let it breathe*/
+div.ad-title {
+    padding: 2em;
+    background-size: cover; /*image is going to cover the div*/
+    background-position: center center;
+}
+/* Shadow for title on background image, WHITE title */
+div.ad-title h1, div.ad-title{
+    color: white;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+div.carousel-caption {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}

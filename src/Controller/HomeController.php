@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 // use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class HomeController extends Controller {
+class HomeController extends AbstractController {
 
     /**
      * @Route("/hello/{firstName}/age/{age}", name="hello")
@@ -26,6 +27,7 @@ class HomeController extends Controller {
             );
     }
 
+
     /**
      * @Route("/", name = "homepage")
      *
@@ -39,6 +41,15 @@ class HomeController extends Controller {
             'age' => 15,
             'firstNames'=>$firstNames
         ]);
+    }
+
+    /**
+     * @Route("/trialtwig", name="trialtwig")
+     *
+     */
+    public function trialTwig()
+    {
+        return $this->render('trialtwig.html.twig');
     }
 
 }
