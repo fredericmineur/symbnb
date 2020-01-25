@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Ad;
 use App\Form\ImageType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -14,27 +15,10 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
-class AdvertisementType extends AbstractType
+class AdvertisementType extends ApplicationType
 {
     
-    /**
-     * To get the base configuration of a field
-     *
-     * @param string $label
-     * @param string $placeholder
-     * @param array $options
-     * @return array
-     */
-    public function getConfiguration($label, $placeholder, $options = [])
-    {
-        return array_merge([
-            'label' => $label,
-            'attr' => [
-                'placeholder' => $placeholder
-            ]
 
-            ], $options);
-    }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -82,6 +66,23 @@ class AdvertisementType extends AbstractType
                     'allow_delete' => true
                 ]
             )
+
+//            ->add(
+//                'images',
+//                CollectionType::class,
+//                [
+//                    'entry_type' => ChoiceType::class,
+//                    'entry_options'  => [
+//                        'choices'  => [
+//                            'Nashville' => 'nashville',
+//                            'Paris'     => 'paris',
+//                            'Berlin'    => 'berlin',
+//                            'London'    => 'london',
+//                        ],
+//                    ],
+//
+//                ]
+//            )
         ;
     }
 
